@@ -91,10 +91,14 @@ body {
         class="w-full border rounded p-3 bg-white"></textarea>
     </div>
 
-    <div class="cf-turnstile" data-sitekey="0x4AAAAAADFakPa9_E-A3PST"></div>
+    <div class="cf-turnstile"
+      data-sitekey="0x4AAAAAADFakPa9_E-A3PST"
+      data-theme="light"
+      data-callback="turnstileCallback">
+    </div>
 
-    <button type="submit"
-      class="w-full py-3 rounded text-white font-semibold"
+    <button id="submitBtn" type="submit" disabled
+      class="w-full py-3 rounded text-white font-semibold opacity-50 cursor-not-allowed"
       style="background: var(--brand);">
       Submit request
     </button>
@@ -118,8 +122,22 @@ body {
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 <script>
+let turnstilePassed = false;
+
+function turnstileCallback() {
+  turnstilePassed = true;
+
+  const btn = document.getElementById("submitBtn");
+  btn.disabled = false;
+  btn.classList.remove("opacity-50", "cursor-not-allowed");
+}
+
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
+
+  if (!turnstilePassed) {
+    return;
+  }
 
   const toast = document.getElementById("toast");
   toast.classList.add("show");
@@ -129,6 +147,16 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   }, 3000);
 
   this.reset();
+
+  const btn = document.getElementById("submitBtn");
+  btn.disabled = true;
+  btn.classList.add("opacity-50", "cursor-not-allowed");
+
+  turnstilePassed = false;
+
+  if (window.turnstile) {
+    turnstile.reset();
+  }
 });
 </script>
 
