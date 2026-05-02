@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Access - DocsAccessHub</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.7/tailwind.min.css">
+
+<style>
+:root {
+  --brand: #6d7dfc;
+  --text: #1f2937;
+  --muted: #6b7280;
+}
+
+body {
+  margin: 0;
+  background-color: #f7fafc;
+  background-image: url("../background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.10);
+  border: 1px solid rgba(255,255,255,0.55);
+}
+</style>
+</head>
+
+<body class="flex items-center justify-center px-4">
+
+<main class="card w-full max-w-md p-10 rounded-xl">
+
+  <div class="flex justify-center mb-8">
+    <img src="../logo.png" alt="DocsAccessHub" class="w-40 mx-auto">
+  </div>
+
+  <h1 class="text-2xl font-semibold mb-2" style="color: var(--text);">
+    Access your document
+  </h1>
+
+  <p class="text-sm mb-6" style="color: var(--muted);">
+    Enter your email address to continue.
+  </p>
+
+  <form class="space-y-4">
+
+    <div>
+      <label class="block text-sm mb-1" style="color: var(--muted);">
+        Email address
+      </label>
+      <input type="email" placeholder="you@company.com"
+        class="w-full border rounded p-3 bg-white">
+    </div>
+
+    <button type="button"
+      class="w-full py-3 rounded text-white font-semibold"
+      style="background: var(--brand);">
+      Continue
+    </button>
+
+  </form>
+
+  <div class="text-sm mt-8" style="color: var(--muted);">
+    <a href="/privacy/" class="hover:underline">Privacy Policy</a>
+    <span class="mx-2">•</span>
+    <a href="/terms/" class="hover:underline">Terms of Service</a>
+  </div>
+
+</main>
+
+</body>
+</html>
