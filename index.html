@@ -6,7 +6,7 @@
 
 <title>DocsAccessHub</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.7/tailwind.min.css">
-  
+
 <style>
 :root {
   --brand: #6d7dfc;
@@ -31,46 +31,61 @@ body {
   box-shadow: 0 20px 60px rgba(0,0,0,0.10);
   border: 1px solid rgba(255,255,255,0.55);
 }
-
 </style>
 </head>
 
 <body class="flex items-center justify-center px-4">
 
-
 <main class="card w-full max-w-lg p-10 rounded-xl">
-  <div class="flex items-center mb-10">
-    <div class="w-10 h-10 mr-4 rounded-sm" style="background: var(--brand);"></div>
-    <h1 class="text-2xl font-semibold" style="color: var(--text);">DocsAccessHub</h1>
+
+  <div class="flex justify-center mb-8">
+    <img src="./logo.png" alt="DocsAccessHub" class="w-40 mx-auto">
   </div>
 
   <p class="text-sm uppercase tracking-widest font-semibold mb-4" style="color: var(--brand);">
     Public portal
   </p>
 
-  <h2 class="text-5xl font-semibold leading-tight mb-6" style="color: var(--text);">
-    Opening soon.
-  </h2>
+  <form class="space-y-4 mb-8">
 
-  <p class="text-lg mb-10" style="color: var(--muted);">
-    Secure document access is being prepared.
-  </p>
+    <div>
+      <label class="block text-sm mb-1" style="color: var(--muted);">
+        Upload document
+      </label>
+      <input type="file" class="w-full border rounded p-2 bg-white">
+    </div>
 
-  <div class="flex space-x-2 mb-8">
-    <div class="h-2 w-16 rounded-full" style="background: var(--brand);"></div>
-    <div class="h-2 w-8 rounded-full" style="background: rgba(107,114,128,0.28);"></div>
-    <div class="h-2 w-4 rounded-full" style="background: rgba(107,114,128,0.22);"></div>
-  </div>
+    <div>
+      <label class="block text-sm mb-1" style="color: var(--muted);">
+        Recipient email
+      </label>
+      <input type="email" placeholder="example@company.com"
+        class="w-full border rounded p-2">
+    </div>
+
+    <div>
+      <label class="block text-sm mb-1" style="color: var(--muted);">
+        Your email
+      </label>
+      <input type="email" placeholder="you@company.com"
+        class="w-full border rounded p-2">
+    </div>
+
+    <button type="button"
+      class="w-full py-3 rounded text-white font-semibold"
+      style="background: var(--brand);">
+      Transfer
+    </button>
+
+  </form>
 
   <div class="text-sm" style="color: var(--muted);">
     <a href="/privacy/" class="hover:underline">Privacy Policy</a>
     <span class="mx-2">•</span>
     <a href="/terms/" class="hover:underline">Terms of Service</a>
   </div>
-  
-  </main>
 
-
+</main>
 
 </body>
 </html>
